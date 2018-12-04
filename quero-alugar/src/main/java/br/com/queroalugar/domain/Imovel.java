@@ -22,6 +22,8 @@ public class Imovel {
 
     private Status status;
 
+    private SituacaoImovel situacaoImovel;
+
     public Long getId() {
         return id;
     }
@@ -68,5 +70,13 @@ public class Imovel {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public SituacaoImovel getSituacaoImovel() {
+        return situacaoImovel;
+    }
+
+    public void setSituacaoImovel(SituacaoImovel situacaoImovel) {
+        this.situacaoImovel = situacaoImovel;
     }
 }
