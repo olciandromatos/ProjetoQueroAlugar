@@ -9,6 +9,7 @@ public class Estado implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID_ESTADO")
     private Long id;
 
     private String nome;

@@ -10,6 +10,7 @@ public class Contato implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID_CONTATO")
     private Long id;
 
     private String nome;

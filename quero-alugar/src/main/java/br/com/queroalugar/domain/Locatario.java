@@ -8,6 +8,7 @@ public class Locatario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID_LOCATARIO")
     private Long id;
 
     private String primeiroNome;

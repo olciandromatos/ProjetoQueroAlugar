@@ -9,6 +9,7 @@ public class Endereco implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID_ENDERECO")
     private Long id;
 
     private String logradouro;

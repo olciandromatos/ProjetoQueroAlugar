@@ -10,6 +10,7 @@ public class Imovel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID_IMOVEL")
     private Long id;
 
     private ArrayList<String> fotos;

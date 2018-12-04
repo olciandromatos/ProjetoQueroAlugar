@@ -9,6 +9,7 @@ public class Cidade implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID_CIDADE")
     private Long id;
 
     private String nome;
