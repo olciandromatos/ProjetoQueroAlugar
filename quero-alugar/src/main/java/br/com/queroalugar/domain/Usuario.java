@@ -18,10 +18,6 @@ public class Usuario implements Serializable {
 
 	private String senha;
 
-	private Locador locador;
-
-	private Locatario locatario;
-
 	public Long getId() {
 		return id;
 	}
@@ -44,22 +40,6 @@ public class Usuario implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public Locador getLocador() {
-		return locador;
-	}
-
-	public void setLocador(Locador locador) {
-		this.locador = locador;
-	}
-
-	public Locatario getLocatario() {
-		return locatario;
-	}
-
-	public void setLocatario(Locatario locatario) {
-		this.locatario = locatario;
 	}
 
 	public String getSenha() {

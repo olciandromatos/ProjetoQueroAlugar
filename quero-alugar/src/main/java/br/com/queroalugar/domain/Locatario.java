@@ -15,8 +15,6 @@ public class Locatario {
 
     private String ultimoNome;
 
-    private Locador locador;
-
     private Contato contato;
 
     private Endereco endereco;
@@ -43,14 +41,6 @@ public class Locatario {
 
     public void setUltimoNome(String ultimoNome) {
         this.ultimoNome = ultimoNome;
-    }
-
-    public Locador getLocador() {
-        return locador;
-    }
-
-    public void setLocador(Locador locador) {
-        this.locador = locador;
     }
 
     public Contato getContato() {
