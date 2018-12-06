@@ -21,6 +21,8 @@ public class Imovel {
 
     private LocalDate dataVencimentoAluguel;
 
+    private Endereco endereco;
+
     private Status status;
 
     private SituacaoImovel situacaoImovel;
