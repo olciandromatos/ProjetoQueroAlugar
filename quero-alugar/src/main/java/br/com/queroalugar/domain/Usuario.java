@@ -1,6 +1,7 @@
 package br.com.queroalugar.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -12,11 +13,21 @@ public class Usuario implements Serializable {
 	@Column(name = "ID_USUARIO")
 	private Long id;
 
-	private String nome;
+	private String nomeUsuario;
 
+	@NotNull(message = "Preenchimento obrigatório")
 	private String email;
 
+	@NotNull(message = "Preenchimento obrigatório")
 	private String senha;
+
+	@ManyToOne
+	@JoinColumn(name = "id_locatario")
+	private Locatario locatario;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_locador")
+	private Locador locador;
 
 	public Long getId() {
 		return id;
@@ -26,12 +37,12 @@ public class Usuario implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeUsuario() {
+		return nomeUsuario;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeUsuario(String nome) {
+		this.nomeUsuario = nome;
 	}
 
 	public String getEmail() {
@@ -48,5 +59,45 @@ public class Usuario implements Serializable {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public Usuario() {
+	}
+
+	public Usuario(String nome,
+				   @NotNull(message = "Preenchimento obrigatório") String email,
+				   @NotNull(message = "Preenchimento obrigatório") String senha) {
+
+		this.nomeUsuario = nome;
+		this.email = email;
+		this.senha = senha;
+	}
+
+	public Locatario getLocatario() {
+		return locatario;
+	}
+
+	public void setLocatario(Locatario locatario) {
+		this.locatario = locatario;
+	}
+
+	public Locador getLocador() {
+		return locador;
+	}
+
+	public void setLocador(Locador locador) {
+		this.locador = locador;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario{" +
+				"id=" + id +
+				", nome='" + nomeUsuario + '\'' +
+				", email='" + email + '\'' +
+				", senha='" + senha + '\'' +
+				", locatario=" + locatario +
+				", locador=" + locador +
+				'}';
 	}
 }
