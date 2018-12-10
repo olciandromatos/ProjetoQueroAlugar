@@ -5,11 +5,13 @@ import br.com.queroalugar.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class UsuarioService {
 
-    @Autowired
-    UsuarioRepository usuarioRepository;
+
+    private UsuarioRepository usuarioRepository;
 
     public void salvar(Usuario usuario){
 
@@ -19,5 +21,18 @@ public class UsuarioService {
             usuarioRepository.save(usuario);
         }
 
+    }
+
+    public String buscarTodos(){
+        return "Cadastrado!";
+    }
+
+    @Autowired
+    public void setUsuarioRepository(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
+
+    public UsuarioRepository getUsuarioRepository() {
+        return usuarioRepository;
     }
 }
