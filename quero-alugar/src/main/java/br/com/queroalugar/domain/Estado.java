@@ -2,6 +2,7 @@ package br.com.queroalugar.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Table(name = "ESTADO")
@@ -47,4 +48,5 @@ public class Estado implements Serializable {
     public void setSigla(String sigla) {
         this.sigla = sigla;
     }
+
 }

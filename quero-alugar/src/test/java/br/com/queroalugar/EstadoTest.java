@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EstadoTest {
@@ -19,90 +23,41 @@ public class EstadoTest {
     @Test
     public void salvar(){
 
-        Estado estado = new Estado();
+        List<Estado> estados = new ArrayList<>();
 
-        estado.setNome("Acre");
-        estado.setSigla("AC");
+        Estado estado = new Estado("Acre", "AC");
+        Estado estado2 = new Estado("Alagoas", "AL");
+        Estado estado3 = new Estado("Amapá", "AP");
+        Estado estado4 = new Estado("Amazonas", "AM");
+        Estado estado5 = new Estado("Bahia", "BA");
+        Estado estado6 = new Estado("Ceará", "CE");
+        Estado estado7 = new Estado("Distrito Federal", "DF");
+        Estado estado8 = new Estado("Espírito Santo", "ES");
+        Estado estado9 = new Estado("Goiás", "GO");
+        Estado estado10 = new Estado("Maranhão", "MA");
+        Estado estado11 = new Estado("Mato Grosso", "MT");
+        Estado estado12 = new Estado("Mato Grosso do Sul", "MS");
+        Estado estado13 = new Estado("Minas Gerais", "MG");
+        Estado estado14 = new Estado("Pará", "PA");
+        Estado estado15 = new Estado("Paraíba", "PB");
+        Estado estado16 = new Estado("Paraná", "PR");
+        Estado estado17 = new Estado("Pernambuco", "PE");
+        Estado estado18 = new Estado("Piauí", "PI");
+        Estado estado19 = new Estado("Rio de Janeiro", "RJ");
+        Estado estado20 = new Estado("Rio Grande do Norte", "RN");
+        Estado estado21 = new Estado("Rio Grande do Sul", "RS");
+        Estado estado22 = new Estado("Rondônia", "RO");
+        Estado estado23 = new Estado("Roraima", "RR");
+        Estado estado24 = new Estado("Santa Catarina", "SC");
+        Estado estado25 = new Estado("São Paulo", "SP");
+        Estado estado26 = new Estado("Sergipe", "SE");
+        Estado estado27 = new Estado("Tocantins", "TO");
 
-        estado.setNome("Alagoas");
-        estado.setSigla("AL");
+        estados.addAll(Arrays.asList(estado, estado2, estado3, estado4, estado5, estado6, estado7, estado8, estado9, estado10,
+                estado11, estado12, estado13, estado14, estado15, estado16, estado17, estado18, estado19, estado20, estado21,
+                estado22, estado23, estado24, estado25, estado26, estado27));
 
-        estado.setNome("Amapá");
-        estado.setSigla("AP");
-
-        estado.setNome("Amazonas");
-        estado.setSigla("AM");
-
-        estado.setNome("Bahia");
-        estado.setSigla("BA");
-
-        estado.setNome("Ceará");
-        estado.setSigla("CE");
-
-        estado.setNome("Distrito Federal\n");
-        estado.setSigla("DF");
-
-        estado.setNome("Espírito Santo");
-        estado.setSigla("ES");
-
-        estado.setNome("Goiás");
-        estado.setSigla("GO");
-
-        estado.setNome("Maranhão");
-        estado.setSigla("MA");
-
-        estado.setNome("Mato Grosso");
-        estado.setSigla("MT");
-
-        estado.setNome("Mato Grosso do Sul");
-        estado.setSigla("MS");
-
-        estado.setNome("Minas Gerais");
-        estado.setSigla("MG");
-
-        estado.setNome("Pará");
-        estado.setSigla("PA");
-
-        estado.setNome("Paraíba");
-        estado.setSigla("PB");
-
-        estado.setNome("Paraná");
-        estado.setSigla("PR");
-
-        estado.setNome("Pernambuco");
-        estado.setSigla("PE");
-
-        estado.setNome("Piauí");
-        estado.setSigla("PI");
-
-        estado.setNome("Rio de Janeiro");
-        estado.setSigla("RJ");
-
-        estado.setNome("Rio Grande do Norte");
-        estado.setSigla("RN");
-
-        estado.setNome("Rio Grande do Sul");
-        estado.setSigla("RS");
-
-        estado.setNome("Rondônia");
-        estado.setSigla("RO");
-
-        estado.setNome("Roraima");
-        estado.setSigla("RR");
-
-        estado.setNome("Santa Catarina");
-        estado.setSigla("SC");
-
-        estado.setNome("São Paulo");
-        estado.setSigla("SP");
-
-        estado.setNome("Sergipe");
-        estado.setSigla("SE");
-
-        estado.setNome("Tocantins");
-        estado.setSigla("TO");
-
-        estadoService.salvar(estado);
+        estadoService.salvarTodos(estados);
     }
 
 }
