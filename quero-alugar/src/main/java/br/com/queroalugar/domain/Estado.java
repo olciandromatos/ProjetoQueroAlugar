@@ -2,6 +2,8 @@ package br.com.queroalugar.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -16,6 +18,17 @@ public class Estado implements Serializable {
     private String nome;
 
     private String sigla;
+
+    @OneToMany(mappedBy = "estado")
+    private List<Cidade> cidades = new ArrayList<>();
+
+    public Estado(String nome, String sigla) {
+        this.nome = nome;
+        this.sigla = sigla;
+    }
+
+    public Estado(){
+    }
 
     public Long getId() {
         return id;
@@ -33,14 +46,6 @@ public class Estado implements Serializable {
         this.nome = nome;
     }
 
-    public Estado(String nome, String sigla) {
-        this.nome = nome;
-        this.sigla = sigla;
-    }
-
-    public Estado(){
-    }
-
     public String getSigla() {
         return sigla;
     }
@@ -49,4 +54,11 @@ public class Estado implements Serializable {
         this.sigla = sigla;
     }
 
+    public List<Cidade> getCidades() {
+        return cidades;
+    }
+
+    public void setCidades(List<Cidade> cidades) {
+        this.cidades = cidades;
+    }
 }
